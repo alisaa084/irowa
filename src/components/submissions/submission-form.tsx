@@ -423,6 +423,40 @@ export function SubmissionForm() {
           </div>
         </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+              Operating Hours
+            </label>
+            <input
+              type="text"
+              value={operatingHours}
+              onChange={(e) => setOperatingHours(e.target.value)}
+              placeholder="e.g. 6:00 AM - 6:00 PM or 24 Hours"
+              className="w-full h-11 px-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:border-blue-500 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+              Contact Information
+            </label>
+            <input
+              type="tel"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              maxLength={11}
+              value={contactInfo}
+              onChange={(e) => {
+                const numericOnly = e.target.value.replace(/\D/g, "").slice(0, 11);
+                setContactInfo(numericOnly);
+              }}
+              placeholder="e.g. 09171234567"
+              className="w-full h-11 px-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:border-blue-500 focus:outline-none"
+            />
+          </div>
+        </div>
+
         <div>
           <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
             Description & Quality Notes
