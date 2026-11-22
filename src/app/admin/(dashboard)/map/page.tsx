@@ -802,14 +802,11 @@ export default function AdminMapEditorPage() {
                   <div className="relative">
                     <Phone className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
                     <input
-                      type="text"
                       type="tel"
                       inputMode="numeric"
                       pattern="[0-9]*"
                       maxLength={11}
                       value={contactInfo}
-                      onChange={(e) => setContactInfo(e.target.value)}
-                      placeholder="e.g. 0917-123-4567 / Barangay Water Committee"
                       onChange={(e) => {
                         const numericOnly = e.target.value.replace(/\D/g, "").slice(0, 11);
                         setContactInfo(numericOnly);
