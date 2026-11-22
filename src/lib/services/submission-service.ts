@@ -5,7 +5,7 @@ import { WaterSubmissionWithPhotos } from "@/types/submission";
 import { SubmissionFormData } from "../validations/submission-schema";
 import { checkRateLimit } from "../utils/rate-limit";
 import { slugify } from "../utils/formatters";
-import { sendPushNotificationToSubscribers } from "./notification-service";
+import { sendPushNotificationToSubscribers } from "./push-dispatch-service";
 import { saveWaterSourceCustomIcon, saveWaterSourceCategoryOverride } from "./water-service";
 
 let submissionCategoriesCache: Record<string, string> | null = null;

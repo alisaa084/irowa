@@ -7,7 +7,8 @@ import { waterSourceSchema } from "@/lib/validations/water-schema";
 import { slugify } from "@/lib/utils/formatters";
 import { logAdminAction } from "@/lib/services/audit-service";
 import { getWaterSourceById, getPublishedWaterSources, getAllWaterSourcesAdmin, MOCK_IROSIN_WATER_SOURCES, saveWaterSourceCustomIcon, getWaterSourceCustomIcons, saveWaterSourceCategoryOverride } from "@/lib/services/water-service";
-import { sendPushNotificationToSubscribers, MOCK_NOTIFICATIONS } from "@/lib/services/notification-service";
+import { MOCK_NOTIFICATIONS } from "@/lib/services/notification-service";
+import { sendPushNotificationToSubscribers } from "@/lib/services/push-dispatch-service";
 import { revalidatePath } from "next/cache";
 
 export async function getAllWaterSourcesAction() {

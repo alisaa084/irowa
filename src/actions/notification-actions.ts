@@ -4,7 +4,8 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import { announcementSchema } from "@/lib/validations/admin-schema";
 import { logAdminAction } from "@/lib/services/audit-service";
-import { getAnnouncements, getNotifications, sendPushNotificationToSubscribers } from "@/lib/services/notification-service";
+import { getAnnouncements, getNotifications } from "@/lib/services/notification-service";
+import { sendPushNotificationToSubscribers } from "@/lib/services/push-dispatch-service";
 import { revalidatePath } from "next/cache";
 
 export async function getActiveAnnouncementsAction() {
