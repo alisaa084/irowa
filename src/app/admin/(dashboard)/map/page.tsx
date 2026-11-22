@@ -418,8 +418,8 @@ export default function AdminMapEditorPage() {
               {feedback && (
                 <div
                   className={`p-2.5 rounded-xl text-xs flex items-center gap-2 ${feedback.type === "success"
-                      ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800"
-                      : "bg-rose-50 text-rose-700 dark:bg-rose-950/40 dark:text-rose-300 border border-rose-200 dark:border-rose-800"
+                    ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800"
+                    : "bg-rose-50 text-rose-700 dark:bg-rose-950/40 dark:text-rose-300 border border-rose-200 dark:border-rose-800"
                     }`}
                 >
                   {feedback.type === "success" ? (
@@ -802,11 +802,14 @@ export default function AdminMapEditorPage() {
                   <div className="relative">
                     <Phone className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
                     <input
+                      type="text"
                       type="tel"
                       inputMode="numeric"
                       pattern="[0-9]*"
                       maxLength={11}
                       value={contactInfo}
+                      onChange={(e) => setContactInfo(e.target.value)}
+                      placeholder="e.g. 0917-123-4567 / Barangay Water Committee"
                       onChange={(e) => {
                         const numericOnly = e.target.value.replace(/\D/g, "").slice(0, 11);
                         setContactInfo(numericOnly);
@@ -817,7 +820,7 @@ export default function AdminMapEditorPage() {
                   </div>
                 </div>
 
-                {/* Publish Toggle */}
+                {/* Publish Toggle hehe*/}
                 <div className="flex items-center gap-2 pt-1">
                   <input
                     type="checkbox"
