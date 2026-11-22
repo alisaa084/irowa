@@ -654,9 +654,16 @@ export default function AdminNewWaterSourcePage() {
             <div className="sm:col-span-2">
               <label className="text-sm font-semibold block mb-1 text-foreground">Contact Information</label>
               <Input
+                type="tel"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                maxLength={11}
                 value={contactInfo}
-                onChange={(e) => setContactInfo(e.target.value)}
-                placeholder="e.g. 0917-123-4567 / Barangay Water Committee"
+                onChange={(e) => {
+                  const numericOnly = e.target.value.replace(/\D/g, "").slice(0, 11);
+                  setContactInfo(numericOnly);
+                }}
+                placeholder="e.g. 09171234567"
                 className="h-10 rounded-xl"
               />
             </div>

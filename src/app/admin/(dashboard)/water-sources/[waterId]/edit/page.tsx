@@ -794,9 +794,16 @@ export default function EditWaterSourcePage() {
             <div>
               <label className="text-sm font-semibold block mb-1 text-foreground">Contact Information</label>
               <Input
+                type="tel"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                maxLength={11}
                 value={contactInformation}
-                onChange={(e) => setContactInformation(e.target.value)}
-                placeholder="e.g. 0912-345-6789"
+                onChange={(e) => {
+                  const numericOnly = e.target.value.replace(/\D/g, "").slice(0, 11);
+                  setContactInformation(numericOnly);
+                }}
+                placeholder="e.g. 09123456789"
                 className="h-10 rounded-xl"
               />
             </div>
