@@ -36,7 +36,7 @@ export async function sendPushNotificationToSubscribers(payload: {
     });
 
     let delivered = 0;
-    const promises = subs.map(async (sub) => {
+    const promises = (subs as any[]).map(async (sub: any) => {
       try {
         const subData = (sub.subscription_data || {
           endpoint: sub.endpoint,
